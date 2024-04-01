@@ -1,6 +1,6 @@
 import unittest
 from unittest.mock import patch, MagicMock
-import scrapper.database_manager as dm
+import scraper.database_manager as dm
 
 class TestDatabaseManager(unittest.TestCase):
 

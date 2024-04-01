@@ -1,6 +1,6 @@
 import unittest
 from unittest.mock import patch, MagicMock, ANY
-import scrapper.product_data_fetcher as pdf
+import scraper.product_data_fetcher as pdf
 import logging
 
 # Configure logging
