@@ -1,5 +1,5 @@
-import scrapper.database_manager as dm
-import scrapper.product_data_fetcher as pdf
+import scraper.database_manager as dm
+import scraper.product_data_fetcher as pdf
 from datetime import datetime
 # from dotenv import load_dotenv
 

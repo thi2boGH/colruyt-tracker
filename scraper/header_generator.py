@@ -1,5 +1,5 @@
 import random
-import scrapper.user_agent_generator as uag
+import scraper.user_agent_generator as uag
 # import UserAgentGenerator
 
 class HeaderGenerator:

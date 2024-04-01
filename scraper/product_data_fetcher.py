@@ -1,6 +1,6 @@
 import requests
 import time
-import scrapper.header_generator as hg
+import scraper.header_generator as hg
 
 class ProductDataFetcher:
     """
