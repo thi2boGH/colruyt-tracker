@@ -1,0 +1,89 @@
+{
+    "productId": "197525",
+    "technicalArticleNumber": "3440812",
+    "commercialArticleNumber": "29018",
+    "name": "bananes",
+    "description": "*Origine: Guatemala, Costa Rica\n*Classe 1\n*Vari\u00e9t\u00e9: Cavendish",
+    "brand": "PAPILLON",
+    "seoBrand": "Papillon",
+    "thumbNail": "https://static.colruytgroup.com/images/200x200/std.lang.all/47/81/asset-2404781.jpg",
+    "fullImage": "https://static.colruytgroup.com/images/500x500/std.lang.all/47/81/asset-2404781.jpg",
+    "squareImage": "https://static.colruytgroup.com/images/500x500sq/std.lang.all/47/81/asset-2404781.jpg",
+    "content": "\u00b11kg",
+    "walkRouteSequenceNumber": 10898,
+    "price": {
+        "basicPrice": 2.4,
+        "recommendedQuantity": "1.2",
+        "unit": "K",
+        "quantityPrice": 2.2,
+        "quantityPriceQuantity": "3.4",
+        "measurementUnitPrice": 2.4,
+        "measurementUnitQuantityPrice": 2.2,
+        "measurementUnit": "K",
+        "isRedPrice": false,
+        "pricePerUOM": 2.4,
+        "activationDate": "02-11-2023",
+        "recordSource": "Offline",
+        "isPromoActive": "N",
+        "priceChangeCode": "H",
+        "quantityPricePerUOM": 2.2,
+        "quantityActivationDate": "02-11-2023",
+        "quantityPriceChangeCode": "H"
+    },
+    "isAvailable": true,
+    "isPriceAvailable": true,
+    "inPromo": false,
+    "gtin": [
+        "95425016493536",
+        "05425016493533",
+        "95400141009135",
+        "05425016492581"
+    ],
+    "topCategoryName": "L\u00e9gumes et fruits",
+    "topCategoryId": "1675",
+    "businessDomain": "RETAIL_BE",
+    "IsPrivateLabel": false,
+    "IsBiffe": false,
+    "WeightconversionFactor": "1000",
+    "IsWeightArticle": true,
+    "IsBio": false,
+    "CountryOfOrigin": "GUATEMALA",
+    "IsExclusivelySoldInLuxembourg": false,
+    "OrderUnit": "P",
+    "ShortName": "BANANES PAPILLON P",
+    "InSeason": true,
+    "IsNew": false,
+    "LongName": "PAPILLON bananes \u00b11kg",
+    "RecentQuanityOfStockUnits": "1",
+    "AlcoholVolume": "0",
+    "StartSeasonDate": "26/02/2016",
+    "FicCode": "E"
+}
+
+
+
+CREATE TABLE Products (
+    ProductID INT AUTO_INCREMENT PRIMARY KEY,
+    ProductName VARCHAR(255),
+    Category VARCHAR(255),
+    Brand VARCHAR(255)
+);
+
+
+
+CREATE TABLE Prices (
+    PriceID INT AUTO_INCREMENT PRIMARY KEY,
+    ProductID INT,
+    ShopID INT,
+    Price DECIMAL(10, 2),
+    Date DATE,
+    FOREIGN KEY (ProductID) REFERENCES Products(ProductID),
+    FOREIGN KEY (ShopID) REFERENCES Shops(ShopID)
+);
+
+CREATE TABLE Shops (
+    ShopID INT AUTO_INCREMENT PRIMARY KEY,
+    ShopName VARCHAR(255),
+    Address TEXT,
+    City VARCHAR(255)
+);

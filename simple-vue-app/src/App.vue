@@ -1,0 +1,124 @@
+<template>
+  <div id="app">
+    <h1>Prices Evolution Over Last 30 Days</h1>
+    <canvas id="pricesChart"></canvas> <!-- Canvas element for Chart.js -->
+  </div>
+</template>
+
+<script>
+import Chart from 'chart.js/auto';
+import 'chartjs-adapter-date-fns';
+
+export default {
+  name: 'App',
+  data() {
+    return {
+      prices: []
+    }
+  },
+  created() {
+    this.fetchPrices();
+  },
+  methods: {
+    async fetchPrices() {
+      try {
+        const response = await fetch('http://localhost:5001/api/prices/evolution');
+        if (!response.ok) throw new Error('Error fetching prices');
+        const data = await response.json();
+        this.prices = data;
+        console.log(this.prices)
+        this.createChart();
+      } catch (error) {
+        console.error('There was an issue fetching the prices evolution data:', error);
+      }
+    },
+    createChart() {
+      const ctx = document.getElementById('pricesChart').getContext('2d');
+
+      // Convert price strings to numbers and parse dates
+      const dataPoints = this.prices.map(item => ({
+        x: new Date(item.date), // convert string to a Date object
+        y: parseFloat(item.price) // parse the price string as a float
+      }));
+
+      // Sort dataPoints by date in case they are not in order
+      dataPoints.sort((a, b) => a.t - b.t);
+
+      const data = {
+        datasets: [{
+          label: 'Price',
+          backgroundColor: 'rgb(255, 99, 132)',
+          borderColor: 'rgb(255, 99, 132)',
+          data: dataPoints,
+          fill: false
+        }]
+      };
+
+      // console.log(data)
+
+      new Chart(ctx, {
+        type: 'line',
+        data: data,
+        options: {
+          scales: {
+            x: {
+              type: 'time',
+              time: {
+                // parser: 'eee, dd MMM yyyy HH:mm:ss zzz', // Adjust date format as needed
+                unit: 'day'
+              },
+              title: {
+                display: true,
+                text: 'Date'
+              }
+            },
+            y: {
+              beginAtZero: true,
+              title: {
+                display: true,
+                text: 'Price ($)'
+              }
+            }
+          }
+        }
+      });
+    }
+
+  }
+}
+</script>
+
+
+<style>
+#app {
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  margin-top: 60px;
+}
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+li:last-child {
+  border-bottom: none;
+}
+
+li:hover {
+  background-color: #f6f6f6;
+}
+</style>
+
