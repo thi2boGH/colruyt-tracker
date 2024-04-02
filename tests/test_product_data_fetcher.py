@@ -17,7 +17,7 @@ class TestProductDataFetcher(unittest.TestCase):
         logging.info('ProductDataFetcher setup for all tests.')
 
 
-    @patch('scrapper.product_data_fetcher.requests.get')
+    @patch('requests.get')
     def test_api_call_failure(self, mock_get):
         # Mock an unsuccessful API response
         mock_response = MagicMock()

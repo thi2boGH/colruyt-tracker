@@ -18,11 +18,11 @@ retry_delay = 30  # seconds
 
 # Shop IDs
 shops = {
-    101:"TEST"
-    # 459: "AUDERGHEM (COLRUYT)",
-    # 1825: "SINT-DENIJS-WESTREM (COLRUYT)",
-    # 471: "ETTERBEEK (RUE GRAY) COLRUYT)",
-    # 1671: "DINANT (COLRUYT)"
+    # 101:"TEST"
+    459: "AUDERGHEM (COLRUYT)",
+    1825: "SINT-DENIJS-WESTREM (COLRUYT)",
+    471: "ETTERBEEK (RUE GRAY) COLRUYT)",
+    1671: "DINANT (COLRUYT)"
 }
 
 def main():
@@ -32,7 +32,7 @@ def main():
 
     # Create table for today's data
     run_date = datetime.now().date()
-    table_name = f"raw_data_{str(run_date).replace('-', '_')}_todelete"
+    table_name = f"raw_data_{str(run_date).replace('-', '_')}"
     db_manager.create_table(table_name)
 
     # Initialize the product data fetcher

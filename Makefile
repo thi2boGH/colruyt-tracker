@@ -17,7 +17,8 @@ test:
 
 run: test
 	@echo "Running the application..."
-	python scrapper/main.py
+	export PYTHONPATH="/Users/thibodebras/dev/colruyt-tracker:$PYTHONPATH"
+	python scraper/main.py
 
 clean:
 	@echo "Cleaning up..."
