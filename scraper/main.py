@@ -26,7 +26,7 @@ shops = {
 }
 
 def main():
-    # Initialize and connect to the database
+    # Initialize and connect to the psql database
     db_manager = dm.DatabaseManager(dbname, user, password, host)
     db_manager.connect()
 
