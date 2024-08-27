@@ -1,0 +1,156 @@
+ #   Column                              Non-Null Count  Dtype  
+---  ------                              --------------  -----  
+ 0   run_date                            55832 non-null  object 
+ 1   shop_id                             55832 non-null  object 
+ 2   page                                55832 non-null  int64  
+ ## ids 
+ 3   productId                           55832 non-null  object 
+ 4   technicalArticleNumber              55832 non-null  object 
+ 5   commercialArticleNumber             55832 non-null  object  //can be the same as technicalArticleNumber but not always
+
+ 6   name                                55752 non-null  object 
+ 7   description                         37482 non-null  object 
+
+ 8   thumbNail                           55832 non-null  object 
+ 9   fullImage                           55832 non-null  object 
+ 10  squareImage                         55832 non-null  object 
+
+ 11  walkRouteSequenceNumber             46527 non-null  float64 ??? 
+
+ # State of product (stock etc)
+ 12  isAvailable                         55832 non-null  bool   
+ 13  isPriceAvailable                    55832 non-null  bool   
+ 14  inPromo                             55832 non-null  bool   
+
+ 15  gtin                                52977 non-null  object ???
+
+ 16  topCategoryName                     49424 non-null  object 
+ 17  topCategoryId                       49424 non-null  object 
+ 18  businessDomain                      55832 non-null  object 'RETAIL_BE', 'NON_FOOD' aka can be paid with sodexo 
+
+ 19  IsPrivateLabel                      55832 non-null  bool   ???
+ 20  IsBiffe                             55832 non-null  bool   ???
+
+ 21  WeightconversionFactor              41571 non-null  object 
+ 22  IsWeightArticle                     55572 non-null  object 
+
+ 23  IsBio                               55832 non-null  bool   
+ 24  CountryOfOrigin                     55340 non-null  object 
+
+ 25  IsExclusivelySoldInLuxembourg       41571 non-null  object 
+
+ 26  OrderUnit                           55572 non-null  object P', 'P,Kg', 'Kg', na
+
+ 27  ShortName                           55828 non-null  object 
+
+ 28  IsNew                               55832 non-null  bool   
+
+ 29  LongName                            55828 non-null  object 
+
+ 30  RecentQuanityOfStockUnits           55832 non-null  object ???
+ 31  FicCode                             55832 non-null  object ???
+
+ 32  price.basicPrice                    46308 non-null  float64
+ 33  price.recommendedQuantity           46308 non-null  object 
+ 34  price.quantityPrice                 6441 non-null   float64
+ 35  price.quantityPriceQuantity         6441 non-null   object 
+ 36  price.measurementUnitPrice          46300 non-null  float64
+ 37  price.measurementUnitQuantityPrice  6441 non-null   float64
+ 38  price.measurementUnit               46303 non-null  object 
+ 39  price.isRedPrice                    46308 non-null  object 
+ 40  price.pricePerUOM                   46300 non-null  float64
+ 41  price.activationDate                46308 non-null  object 
+ 42  price.recordSource                  31521 non-null  object 
+ 43  price.isPromoActive                 46308 non-null  object 
+ 44  price.priceChangeCode               46308 non-null  object 
+ 45  price.quantityPricePerUOM           6441 non-null   float64
+ 46  price.quantityActivationDate        6441 non-null   object 
+ 47  price.quantityPriceChangeCode       6441 non-null   object 
+
+ 48  brand                               49959 non-null  object 
+ 49  seoBrand                            49787 non-null  object 
+
+ 50  content                             48517 non-null  object 
+
+ 51  nutriscoreLabel                     24271 non-null  object 
+
+ 52  AlcoholVolume                       28676 non-null  object 
+
+ 53  price.unit                          1658 non-null   object 
+
+ 54  InSeason                            5618 non-null   object 
+ 55  StartSeasonDate                     5478 non-null   object 
+
+ 56  EcoscoreLabel                       20677 non-null  object 
+ 57  EcoscoreValue                       20677 non-null  object 
+
+ 58  promotion                           6902 non-null   object 
+
+ 59  DepositValue                        1119 non-null   object 
+
+ 60  price.redPriceReason                327 non-null    object nan, 'Promo' -> duplicate for promotion?
+ 61  price.referencePrice                262 non-null    float64
+ 62  price.retentionPeriod               262 non-null    float64
+
+ 63  EndSeasonDate                       140 non-null    object 
+ 64  BiffeDate                           660 non-null    object 
+
+
+
+________________________________________________________________
+
+
+
+0   run_date                            55832 non-null  object 
+1   shop_id                             55832 non-null  object 
+2   page                                55832 non-null  int64  
+
+## product descripotion
+3   productId                           55832 non-null  object 
+6   name                                55752 non-null  object 
+29  LongName                            55828 non-null  object 
+27  ShortName                           55828 non-null  object 
+7   description                         37482 non-null  object
+16  topCategoryName                     49424 non-null  object 
+17  topCategoryId                       49424 non-null  object
+48  brand                               49959 non-null  object 
+49  seoBrand                            49787 non-null  object   
+
+
+## Prodcut variables 
+12  isAvailable                         55832 non-null  bool   
+13  isPriceAvailable                    55832 non-null  bool   
+14  inPromo                             55832 non-null  bool   
+23  IsBio                               55832 non-null  bool   
+24  CountryOfOrigin                     55340 non-null  object 
+28  IsNew                               55832 non-null  bool   
+50  content                             48517 non-null  object 
+51  nutriscoreLabel                     24271 non-null  object 
+56  EcoscoreLabel                       20677 non-null  object 
+57  EcoscoreValue                       20677 non-null  object 
+
+
+## price 
+32  price.basicPrice                    46308 non-null  float64
+33  price.recommendedQuantity           46308 non-null  object 
+34  price.quantityPrice                 6441 non-null   float64
+35  price.quantityPriceQuantity         6441 non-null   object 
+36  price.measurementUnitPrice          46300 non-null  float64
+37  price.measurementUnitQuantityPrice  6441 non-null   float64
+38  price.measurementUnit               46303 non-null  object 
+39  price.isRedPrice                    46308 non-null  object 
+40  price.pricePerUOM                   46300 non-null  float64
+41  price.activationDate                46308 non-null  object 
+42  price.recordSource                  31521 non-null  object 
+43  price.isPromoActive                 46308 non-null  object 
+44  price.priceChangeCode               46308 non-null  object 
+45  price.quantityPricePerUOM           6441 non-null   float64
+46  price.quantityActivationDate        6441 non-null   object 
+47  price.quantityPriceChangeCode       6441 non-null   object
+60  price.redPriceReason                327 non-null    object 
+61  price.referencePrice                262 non-null    float64
+62  price.retentionPeriod               262 non-null    float64
+53  price.unit                          1658 non-null   object  
+58  promotion                           6902 non-null   object 
+
+

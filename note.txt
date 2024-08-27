@@ -2,7 +2,8 @@ sometimes, products are getting gathered from different pages
     => need to drop duplicates
 productId is associate to unique technicalArticleNumber and commercialArticleNumber
 
-
+name is not always populated
+  - same for short and long name
 
 
 
